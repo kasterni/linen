@@ -46,14 +46,14 @@ img:hover {
 
 h1,
 h2 {
-    font-family: 'Orpheus Pro', serif;
+    font-family: orpheuspro, serif;
     font-size: 4rem;
     font-weight: 400;
     color: #333;
 }
 
 p {
-    font-family: 'Karla', serif;
+    font-family: 'Karla', sans-serif;
     font-size: 1rem;
     font-weight: 300;
     color: #333;
@@ -62,7 +62,7 @@ p {
 
 p.small,
 a.small {
-    font-family: 'Karla', serif;
+    font-family: 'Karla', sans-serif;
     font-size: 0.8rem;
     font-weight: 300;
     color: rgb(104, 104, 104);
@@ -286,7 +286,7 @@ a.small {
 }
 
 .logo a {
-    font-family: 'Orpheus Pro', serif;
+    font-family: orpheuspro, serif;
     font-size: 2rem;
     font-weight: 400;
     color: #333;
@@ -438,13 +438,13 @@ input:focus {
 
 ::placeholder {
     opacity: 0.5;
-    font-family: 'Karla', serif;
+    font-family: 'Karla', sans-serif;
     font-size: 1rem;
     color: #DACFC1 !important;
 }
 
 input[type=submit] {
-    font-family: 'Karla', serif;
+    font-family: 'Karla', sans-serif;
     font-size: 1rem;
     color: #DACFC1 !important;
     text-align: right;
@@ -708,7 +708,7 @@ a.cta {
 
     .overlay.open li a {
         font-size: 2rem;
-        font-family: 'Orpheus Pro', serif;
+        font-family: orpheuspro, serif;
     }
 
     .no-scroll {
