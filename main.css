@@ -40,6 +40,12 @@ img:hover {
 .shape-details img {
     width: auto;
     height: 300px;
+    transition: all 800ms ease;
+}
+
+.shape-details img:hover {
+    transform: rotate(-10deg);
+    transform-origin: bottom right;
 }
 
 /* HEADING STYLES */
@@ -86,10 +92,15 @@ a.small {
     color: #DACFC1 !important;
 }
 
+.dark {
+    color: #333 !important;
+}
+
 /* PRELOADER */
 
 
 .loader {
+    z-index: 999999;
     overflow: hidden;
     background-color: #F6F3F1;
     position: fixed;
@@ -406,11 +417,13 @@ a.inverse-underline:hover {
 .inverse-underline-beige::after {
     content: '';
     display: block;
-    width: 0;
+    width: 100%;
     height: 1px;
     background: #F6F3F1 !important;
     transition: width .3s;
 }
+
+
 
 /* HERO SECTION */
 
@@ -498,72 +511,7 @@ a.cta {
  */
 
 
-/* slider */
-
-
-.ctn {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-}
-
-.ctn .holder {
-    display: flex;
-    justify-content: center;
-    width: 300vw;
-    height: 100%;
-}
-
-.ctn .holder .box {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height: 100vh;
-}
-
-.inner {
-    height: 60%;
-    width: 50vw;
-}
-
-.b1 {
-    background: url(img/insta-4.png) center no-repeat;
-    background-size: cover;
-}
-
-.b2 {
-    background: url(img/insta-4.png) center no-repeat;
-    background-size: cover;
-}
-
-.b3 {
-    background: url(img/insta-4.png) center no-repeat;
-    background-size: cover;
-}
-
-.b4 {
-    background: url(img/insta-4.png) center no-repeat;
-    background-size: cover;
-}
-
-.b5 {
-    background: url(img/insta-4.png) center no-repeat;
-    background-size: cover;
-}
-
-.b6 {
-    background: url(img/insta-4.png) center no-repeat;
-    background-size: cover;
-}
-
-
-
-
+/* IMAGE HOVER */
 .img-block {
     overflow: hidden;
     position: relative;
@@ -592,10 +540,8 @@ a.cta {
 
     .burger {
         width: 20px;
-        height: 20px;
         position: relative;
         z-index: 9999;
-        display: inline-block;
         transition: all 300ms ease;
     }
 
@@ -615,13 +561,19 @@ a.cta {
     .change .line:nth-last-child(1) {
         width: 20px;
         transform: rotate(-45deg);
+        margin-top: -8px !important;
+
     }
 
     .change .line:nth-last-child(2) {
         width: 20px;
         transform: rotate(45deg);
-        transform-origin: bottom left;
+        /* transform-origin: bottom left; */
     }
+
+    /* .change.burger {
+        transform: translateY(8px);
+    } */
 
     /* MENU OVERLAY */
 
@@ -699,12 +651,16 @@ a.cta {
         text-decoration: none;
         overflow: hidden;
         opacity: 0;
-        padding: 20px 0 !important;
     }
 
     .overlay.open li {
         padding: 20px 0 !important;
     }
+
+    .overlay.open li:last-child {
+        padding: 20px 0 0 0 !important;
+    }
+
 
     .overlay.open li a {
         font-size: 2rem;
@@ -744,4 +700,107 @@ a.cta {
         width: 0;
     }
 
+}
+
+/* fade in up */
+
+.module {
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.come-in {
+    opacity: 1;
+    transform: translateY(150px);
+    animation: come-in 0.8s ease forwards;
+}
+
+.come-in.slow {
+    animation: come-in 1s ease forwards !important;
+}
+
+.come-in.extra-slow {
+    animation: come-in 1.2s ease forwards !important;
+}
+
+.come-in.slower {
+    animation: come-in 1.5s ease forwards !important;
+}
+
+.already-visible {
+    transform: translateY(0);
+    animation: none;
+}
+
+@keyframes come-in {
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* image reveal */
+
+.reveal__content {
+    overflow: hidden;
+    height: 0;
+    animation: slide 0.9s 3s forwards;
+}
+
+.reveal__content>* {
+    animation: scale 0.9s 3s forwards;
+}
+
+@keyframes slide {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* COLLECTION */
+
+.product-archive a,
+.product-archive a h2 {
+    transition: all 300ms ease;
+}
+
+.product-archive a:hover {
+    text-decoration: none;
+}
+
+.product-archive a:hover img,
+.product-archive a:hover p,
+.product-archive a:hover h2 {
+    opacity: 0.8;
+}
+
+.product-archive a:hover h2 {
+    letter-spacing: 2px;
+}
+
+
+/* CTA CALL TO ACTION LINK */
+
+
+a.cta {
+    display: inline-block;
+    text-decoration: none;
 }

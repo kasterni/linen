@@ -130,3 +130,76 @@ $('#toggle').click(function () {
   $("html, body").toggleClass("no-scroll");  
 });
 
+
+
+// fade in up 
+
+(function($) {
+
+  $.fn.visible = function(partial) {
+    
+      var $t            = $(this),
+          $w            = $(window),
+          viewTop       = $w.scrollTop(),
+          viewBottom    = viewTop + $w.height(),
+          _top          = $t.offset().top,
+          _bottom       = _top + $t.height(),
+          compareTop    = partial === true ? _bottom : _top,
+          compareBottom = partial === true ? _top : _bottom;
+    
+    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+  };
+    
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".module");
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible"); 
+  } 
+});
+
+win.scroll(function(event) {
+  
+  allMods.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in"); 
+    } 
+  });
+  
+});
+
+
+
+// reveal images when loader dissapears
+
+Document.prototype.ready = function(callback) {
+  if(callback && typeof callback === 'function') {
+    document.addEventListener("DOMContentLoaded", function() {
+      if(document.readyState === "interactive" || document.readyState === "complete") {
+        return callback();
+      }
+    });
+  }
+};
+
+document.ready(function() { 
+  var selectors = document.querySelectorAll('.reveal');
+  for(var el of selectors) {
+    el.style.height = el.querySelector('.reveal__content > *').scrollHeight + 'px';
+  }
+});
+
+$(function(){  // $(document).ready shorthand
+  $('.fade-in').fadeIn('slow');
+});
+
+
+
+
