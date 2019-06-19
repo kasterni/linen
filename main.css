@@ -535,6 +535,7 @@ a.cta {
     -webkit-transform: scale(1.1);
     -o-transform: scale(1.1);
     -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .img-block img:hover {
@@ -542,6 +543,7 @@ a.cta {
     -webkit-transform: scale(1) !important;
     -o-transform: scale(1) !important;
     -ms-transform: scale(1) !important;
+    transform: scale(1) !important;
 }
 
 
@@ -549,6 +551,10 @@ a.cta {
 /* ------ MOBILE ------ */
 
 @media screen and (max-width: 720px) {
+
+    body {
+        overflow-x: hidden;
+    }
 
     .burger {
         width: 20px;
@@ -1031,7 +1037,6 @@ span:last-child {
 }
 
 .socials a {
-    display: inline-block;
     width: 40px;
     height: 40px;
     border-radius: 50px;
