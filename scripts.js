@@ -30,9 +30,9 @@
 
 // drag images around - use class box
 
-// Draggable.create('.box', {type: 'x,y', edgeResistance: 0.65, bounds: '.row', throwProps: true})
+// Draggable.create('.box', {type: 'x,y', edgeResistance: 0.65, bounds: 'body', throwProps: true})
 
-// Draggable.create('.name', {type: 'x,y', edgeResistance: 0.65, bounds: '.row', throwProps: true})
+// Draggable.create('.name', {type: 'x,y', edgeResistance: 0.65, bounds: 'body', throwProps: true})
 
 
 
@@ -201,5 +201,25 @@ $(function(){  // $(document).ready shorthand
 });
 
 
+
+
+
+
+
+// faq 1
+
+if( jQuery(".toggle .toggle-title").hasClass('active') ){
+  jQuery(".toggle .toggle-title.active").closest('.toggle').find('.toggle-inner').show();
+}
+jQuery(".toggle .toggle-title").click(function(){
+  if( jQuery(this).hasClass('active') ){
+    jQuery(this).removeClass("active").closest('.toggle').find('.toggle-inner').slideUp(200);
+  }
+  else{	jQuery(this).addClass("active").closest('.toggle').find('.toggle-inner').slideDown(200);
+  }
+});
+
+
+// form
 
 
