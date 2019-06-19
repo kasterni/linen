@@ -815,6 +815,7 @@ a.cta {
 }
 
 
+
 /* CTA CALL TO ACTION LINK */
 
 
@@ -833,13 +834,13 @@ a.cta {
     filter: grayscale(0);
 }
 
-.contact {
+.contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-start: span 3;
 }
 
-.contact input {
+.contacts input {
     color: #333;
 }
 
@@ -1004,6 +1005,49 @@ a.cta {
     color: #333;
 }
 
-.form::placeholder {
+.form ::placeholder {
     color: #7a7a7a !important;
 }
+
+/* socials */
+
+.socials {
+    display: flex;
+    width: 100%;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: none;
+    margin-right: 20px;
+}
+
+span:last-child {
+    margin-right: 0 !important;
+}
+
+.socials a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 6px #DACFC1 !important;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.socials i {
+    color: #DACFC1 !important;
+}
+
+.socials a:hover,
+.socials i:hover {
+    opacity: 0.7;
+    transition: all 300ms ease;
+}
+
